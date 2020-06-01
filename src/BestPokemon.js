@@ -9,18 +9,25 @@ const BestPokemonFetcher = () => {
 		fetch('https://pokeapi.co/api/v2/pokemon/1/')
 			.then(res => res.json())
 			.then(data => setBestPokemon(data))
-
 	}, [])
 	
-	if (!bestPokemon) {
-		return null
-	} else {
-		return (
+	return (
+		!bestPokemon ? null : (
 			<div>
-				<BestPokemon pokemon={bestPokemon} />
-			</div>
+			 		<BestPokemon pokemon={bestPokemon} />
+			</div>	
 		)
-	}
+	)
+	
+	// if (!bestPokemon) {
+	// 	return null
+	// } else {
+	// 	return (
+	// 		<div>
+	// 			<BestPokemon pokemon={bestPokemon} />
+	// 		</div>
+	// 	)
+	// }
 	
 	
 }
